@@ -1,0 +1,66 @@
+body {
+    color: white;
+    /* background-blend-mode: lighten; */
+}
+
+.jumbotron {
+color: white;
+text-align: center;
+font-size: 48px;
+font-weight: bold; 
+}
+
+.instructionsRow{
+    background-color: antiquewhite;
+    opacity: 0.5;
+    color: black;
+
+}
+.instructions {
+    float: left;    
+    Height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 2%;
+    padding-top: 1%;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.instructionDetails {
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.card-columns {
+    margin-top: 5%;
+    opacity: 0.5;
+    color: black;
+    /* background-color: antiquewhite; */
+
+}
+.wins {
+    text-align: center;
+    color: darkgreen !important;
+}
+
+#losses {
+    text-align: center;
+    color: darkred !important;
+}
+
+#targetScore {
+    text-align: center;
+    color: darkblue !important;
+}
+
+#currentScore {
+    text-align: center;
+    color: darkblue !important;
+}
+
+.crystalImage {
+    width: 200px;
+    height: 200px;
+}
