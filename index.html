@@ -11,44 +11,86 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <title>Crystal Game</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
-<body style="background: url(assets/images/crystalbackground.jpg); background-repeat: no-repeat">
+<body style="background: url(assets/images/crystalbackground.jpg); background-repeat: no-repeat;">
 
     <!-- Jumbotron for the game title. -->
-    <div class='jumbotron'>The Crystal Game</div>
     <div class="container">
+        <div class='jumbotron'>The Crystal Game</div>
+        <div class="row gameStats">
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <div class="card gamesWon">
+                    <div class="card-body">
+                        <h5 class="card-text"><strong>Games Won: </strong><span class="card-text wins"></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card gamesLost">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Games Lost: </strong><span class="card-text losses"></span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row instructionsRow">
-            <div class="col-md-2 instructions">Instructions:</div>
-            <div class="col-md-10 instructionDetails">
+            <div class="col-md-3 instructions">Instructions:</div>
+            <div class="col-md-9 instructionDetails">
                 <h3> To win the game you must achieve the exact number of points as the 'Target' score.
                     To accumulate points you must click on the crystal images, which each have a different
                     number of points associated to them. Good Luck!!! </h3>
             </div>
         </div>
-        <div class="card-columns">
-            <div class="card">
-                <h2 class="card-text #wins"><strong>Games Won:</strong></h2>
-                    <div id=".wins"></div>
+        <div class="row gameTotals">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="card targetScoreCard">
+                    <div class="card-body">
+                        <h2 class="card-title "><strong>Target Score: </strong></h2>
+                        <h3 class="card-text targetScore"></h3>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h2 class="card-text"><strong>Games Lost:</strong><span class="#losses"></span></h2>
+            <div class="col-md-4">
+                <div class="card currentScoreCard">
+                    <div class="card-body">
+                        <h2 class="card-title "><strong>Current Score: </strong></h2>
+                        <h3 class="card-text currentScore"></h3>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h2 class="card-text"><strong>Target Score: </strong> <span id="#targetScore"></span></h2>
-            </div>
-            <div class="card">
-                <h2 class="card-text"><strong>Current Score: </strong> <span id="#currentScore"></span></h2>
-            </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="container"></div>
-            <div class="row">
+        <div class="row">
+            <div class="col-md-12 crystalInstructions">
                 <h2 class="pickACrystal">Click on an image of a crystal below to score points</h2>
             </div>
-            <div class="row">
-                <div class="img"> <span id='#crystals'></span></div>
+        </div>
+        <div class="row crystalRow">
+            <div class="col-md-3">
+                <div class="card crystal-card">
+                    <img class="card-img-top crystal-image crystalOne" src="assets/images/Crystal1.jpeg" alt="1st Crystal">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card crystal-card">
+                    <img class="card-img-top crystal-image crystalTwo" src="assets/images/Crystal2.jpeg" alt="2nd Crystal">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card crystal-card">
+                    <img class="card-img-top crystal-image crystalThree" src="assets/images/Crystal3.jpeg" alt="3rd Crystal">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card crystal-card">
+                    <img class="card-img-top crystal-image crystalFour" src="assets/images/Crystal4.jpeg" alt="4th Crystal">
+                </div>
             </div>
         </div>
     </div>

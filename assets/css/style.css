@@ -1,66 +1,84 @@
-body {
-    color: white;
-    /* background-blend-mode: lighten; */
-}
 
 .jumbotron {
-color: white;
 text-align: center;
 font-size: 48px;
-font-weight: bold; 
+font-weight: bolder; 
+opacity: 0.5;
+color: black;
 }
 
 .instructionsRow{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: black;
+    font-weight: bold;
+    font-size: 32px;
     background-color: antiquewhite;
     opacity: 0.5;
-    color: black;
-
 }
 .instructions {
     float: left;    
-    Height: 50px;
     text-align: center;
     vertical-align: middle;
-    padding-left: 2%;
+    padding-left:2%;
     padding-top: 1%;
-    font-size: 24px;
+    font-size: 38px;
     font-weight: bold;
+    border-right-style: solid;
+    border-right-color: black;
+    border-right-width: 1px;
 }
 
 .instructionDetails {
     padding-top: 1%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.card-columns {
-    margin-top: 5%;
+.card {
+    margin-top: 2%;
     opacity: 0.5;
     color: black;
-    /* background-color: antiquewhite; */
-
 }
-.wins {
+
+.gameTotals {
     text-align: center;
-    color: darkgreen !important;
+    padding: 5px;
 }
 
-#losses {
+.gamesWon {
+    color: darkgreen;
+}
+
+.gamesLost {
+    color: darkred;
+}
+
+.targetScoreCard {
     text-align: center;
-    color: darkred !important;
+    color: darkblue;
 }
 
-#targetScore {
+.currentScoreCard {
     text-align: center;
-    color: darkblue !important;
+    color: darkblue;
 }
 
-#currentScore {
-    text-align: center;
-    color: darkblue !important;
+.pickACrystal {
+    text-align: center;    
+    background-color: antiquewhite;
+    opacity: 0.5;
+    color: black;
+    font-weight: bold;
+    margin-top: 2%;
 }
 
-.crystalImage {
+.crystalRow {
+    margin-top: 2%;
+
+}
+
+.card-img-top {
     width: 200px;
     height: 200px;
 }
