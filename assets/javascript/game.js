@@ -5,89 +5,88 @@ var CrystalGame = function () {
     this.targetNumber = 0;
     this.currentScore = 0;
     this.crystalScore = 0;
-    this.crystalPointsArray = []
-    this.crystalImagesArray = ["assets/images/crystal1.jpeg", "assets/images/crystal2.jpeg", "assets/images/crystal3.jpeg", "assets/images/crystal4.jpeg"];
+    this.crystalPointsArray = [];
+    this.crystalImagesArray = ["assets/images/crystal1.jpeg", "assets/images/crystal6.jpeg", "assets/images/crystal7.jpeg", "assets/images/crystal8.jpeg"];
 
-    $(".targetScore").text(this.targetNumber);
-    console.log("Target Score: "+this.targetNumber);
-    $(".currentScore").text(this.currentScore);
-    console.log("Current Score: "+this.currentScore);
-    $(".wins").text(this.winTotal);
-    console.log("Wins: "+this.winTotal);
-    $(".losses").text(this.lostTotal);
-    console.log("Lossses: "+this.lostTotal);
 
+
+    // function to setup and start a new instance of the game, get new target number and crystal values
     this.startGame = function () {
         console.log("Initiated StartGame function");
         this.currentScore = 0;
-        this.randomizeTarget(this.targetNumber);
-        this.randomizeCrystalPoints(this.randomCrystalPoints);
-        // this.displayCrystals = function () {
-        //     for (var i = 1; i <= 4; i++) {
-        //         // Create an image for each Crystal, assign it's attributes and display it on screen
-        //         var crystalImage = $("<img>");
-        //         crystalImage.addClass("crystal-image");
-        //         crystalImage.attr(this.crystalImages[i]);
-        //         crystalImage.attr("crystalValue", this.randomizeCrystalPoints(this.randomCrystalPoints));
-        //         console.log ("Crystal"+i+": "+crystalImage);
-        //         $("#crystals").append(crystalImage);
-        //         console.log (crystalImage);
-        //     }}
-        //     return (this.randomCrystalPoints);
+        this.crystalPointsArray = [];
+        $(".targetScore").text(this.targetNumber);
+        console.log("Target Score: "+this.targetNumber);
+        $(".currentScore").text(this.currentScore);
+        console.log("Current Score: "+this.currentScore);
+        $(".wins").text(this.winTotal);
+        console.log("Wins: "+this.winTotal);
+        $(".losses").text(this.lostTotal);
+        console.log("Lossses: "+this.lostTotal);
 
-    }
+        // This function creates a random number between 19-120 inclusive, to be assigned to the games Target Score
+        this.randomizeTarget = function () {
+            console.log ("Initiated randomizeTarget function ");
+            this.targetNumber = [Math.floor(Math.random() * 102)+19];
+            console.log ("Target Score: "+this.targetNumber);
+            $(".targetScore").html(this.targetNumber);
+            return (this.targetNumber);
 
-    // This function creates a random number between 19-120 inclusive, to be assigned to the games Target Score
-    this.randomizeTarget = function (targetNumber) {
-        console.log ("Initiated randomizeTarget function ");
-        this.targetNumber = [Math.floor(Math.random() * 102)+19];
-        console.log ("Target Score: "+this.targetNumber);
-        $(".targetScore").html(this.targetNumber);
-        return (this.targetNumber);
-
-    }
-    // This function creates an array of 4 random numbers between 1-12 inclusive, to be assigned to each Crystals Points value
-    this.randomizeCrystalPoints = function (crystalPointsArray) {
-        for (j=1;j<=4;j++) {
-            console.log ("Initiated randomizeCrystalPoints function ");
-            var randomCrystalPoints = [Math.floor(Math.random() * 12)+1];
-            this.crystalPointsArray.push(parseInt(randomCrystalPoints));
-            console.log ("Crystals Scores: "+this.crystalPointsArray);
         }
-        return (this.crystalPointsArray);
-    }
-
-
+        // This function creates an array of 4 random numbers between 1-12 inclusive, to be assigned to each Crystals Points value
+        this.randomizeCrystalPoints = function () {
+            for (j=1;j<=4;j++) {
+                console.log ("Initiated randomizeCrystalPoints function ");
+                var randomCrystalPoints = [Math.floor(Math.random() * 12)+1];
+                this.crystalPointsArray.push(parseInt(randomCrystalPoints));
+                // imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+                console.log ("Crystals Scores: "+this.crystalPointsArray);
+            }
+            return (this.crystalPointsArray);
+        }
+        this.randomizeTarget();
+        this.randomizeCrystalPoints();
+    }   
     // This function looks for a click event on a crystal image, updates the current score and checks if you have won or lost
-    this.clickCrystals = function (currentScore, targetNumber, crystalScore) {
+    this.clickCrystals = function () {
         console.log ("Initiated clickCrystals function ");
-        $(".crystal-image").on("click", function () {
-            this.crystalImage = (".crystal-image");
-            console.log(this);
+        console.log ("first position in crystalpointsarray: "+this.crystalPointsArray[0]);
+        console.log ("target number: "+this.targetNumber);
+        console.log ("current score: "+this.currentScore);
+
+        // On Click function to determine which crystal image was clicked
+        $(".crystal-image").on("click", function (crystalPointsArray, crystalScore) {
         
-            if (this===$(".crystalOne")) {
-                this.crystalScore = this.crystalPointsArray[0];
+            // If statements to check which crystal was checked and add the value to the current score
+            console.log (crystalPointsArray);
+
+            if ($(this).hasClass('crystalOne')) {
+                console.log("Crystal 1 if: "+$(this).hasClass('crystalOne'));
+                console.log (crystalPointsArray[0]);
+                this.crystalScore = parseInt(crystalPointsArray);
                 console.log ("Case 1 crystalScore: "+crystalScore);
             }
-            else if (this===$(".crystalTwo")) {
-                this.crystalScore = crystalPointsArray[1];
-                console.log ("Case 2 crystalScore: "+crystalScore);  
+            else if ($(this).hasClass('crystalTwo')) {
+                console.log("Crystal 2 if: "+$(this).hasClass('crystalTwo'));
+                console.log (crystalPointsArray[1]);
+                this.crystalScore = parseInt(crystalPointsArray);
+                console.log ("Case 1 crystalScore: "+crystalScore);
             }
-            else if (this===$(".crystalThree")) {                    
-                this.crystalScore = crystalPointsArray[2];
-                console.log ("case 3 crystalScore: "+crystalScore);
+            else if ($(this).hasClass('crystalThree')) {                  
+                console.log("Crystal 3 if: "+$(this).hasClass('crystalThree'));
+                console.log (crystalPointsArray[2]);
+                this.crystalScore = parseInt(crystalPointsArray);
+                console.log ("Case 1 crystalScore: "+crystalScore);
             }
-            else if (this===$(".crystalFour")) {                    
-                var crystalScore = crystalPointsArray[3];
-                console.log ("case 4 crystalScore: "+crystalScore);
+            else if ($(this).hasClass('crystalFour')) {                 
+                console.log("Crystal 4 if: "+$(this).hasClass('crystalFour'));
+                console.log (crystalPointsArray[3]);
+                this.crystalScore = parseInt(crystalPointsArray);
+                console.log ("Case 1 crystalScore: "+crystalScore);
             }
             
-            //var crystalScore = ($(this).attr("crystalValue"));
-            //console.log ($(this).attr("crystalValue"));
-            console.log(typeof this.crystalScore);
-            this.crystalScore = parseInt(crystalScore);
             this.currentScore += this.crystalScore;
-            console.log(this.crystalScore);
+            console.log(this.currentScore);
             $(".currentScore").text(this.currentScore);
 
             if (this.currentScore === this.targetNumber) {
@@ -101,8 +100,9 @@ var CrystalGame = function () {
                 this.lostTotal++
                 $("#losses").text(this.lostTotal);
             }
+            return (this.currentScore);
+
         })
-        return (this.currentScore);
     }
 }
 
