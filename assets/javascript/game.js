@@ -30,7 +30,6 @@ var CrystalGame = function () {
             console.log("Target Score: " + this.targetNumber);
             $(".targetScore").html(this.targetNumber);
             return (this.targetNumber);
-
         }
         // This function creates an array of 4 random numbers between 1-12 inclusive, to be assigned to each Crystals Points value
         this.randomizeCrystalPoints = function () {
@@ -90,8 +89,7 @@ var CrystalGame = function () {
             $(".currentScore").text(self.currentScore);
             // console.log(typeof self.targetNumber);
             self.targetNumber = parseInt(self.targetNumber);
-            // console.log(typeof self.targetNumber);
-            // console.log("Target Number"+self.targetNumber);
+            // console.log("Target Number: "+self.targetNumber);
             if (self.currentScore === self.targetNumber) {
                 alert("Winner Winner Chicken Dinner !!! Congratulations you have won the game.");
                 console.log(typeof self.winTotal);
@@ -108,7 +106,7 @@ var CrystalGame = function () {
                 $(".losses").text(self.lostTotal);
                 self.startGame();
             }
-            // return (self.currentScore);
+            return (self.currentScore);
         })
     }
 }
