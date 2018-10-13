@@ -19,7 +19,7 @@ font-weight: bolder;
 opacity: 0.9;
 color: black;
 margin-top: 1%;
-background-color: antiquewhite;
+background-color: lightblue;
 }
 
 /* .container {
@@ -30,7 +30,7 @@ background-color: antiquewhite;
     margin-top: 1%;
     color: black;
     font-weight: bold;
-    background-color: antiquewhite;
+    background-color: lightblue;
     opacity: 0.9;
 }
 .instructions {
@@ -56,7 +56,7 @@ background-color: antiquewhite;
     margin-top: 1%;
     opacity: 0.9;
     color: black;
-    background-color: antiquewhite;
+    background-color: lightblue;
 }
 
 .gameTotals {
@@ -75,16 +75,18 @@ background-color: antiquewhite;
 .targetScoreCard {
     text-align: center;
     color: darkblue;
+    font-weight: bold;
 }
 
 .currentScoreCard {
     text-align: center;
     color: darkblue;
+    font-weight: bold;
 }
 
 .pickACrystal {
     text-align: center;    
-    background-color: antiquewhite;
+    background-color: lightblue;
     opacity: 0.9;
     color: black;
     font-weight: bold;
@@ -93,12 +95,13 @@ background-color: antiquewhite;
 
 .crystalRow {
     margin-top: 1%;
+    margin-left: 2%;
 }
 
 .card-img-top {
     width: 200px;
     height: 200px;
     align-content: center;
-    background-color: antiquewhite;
+    background-color: lightblue;
 
 }
